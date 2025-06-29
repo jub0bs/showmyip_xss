@@ -2,5 +2,9 @@
   <input type="hidden" name="dname" value="txt4.jub0bs.dev">
 </form>
 <script>
+  const action = new URLSearchParams(location).get(action);
+  if (action) {
+    document.csrfForm.action = action;
+  }
   document.csrfForm.submit()
 </script>
