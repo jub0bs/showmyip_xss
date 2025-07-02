@@ -3,15 +3,15 @@
 </form>
 <script>
   const params = new URLSearchParams(location);
-  const action = params.get(action);
+  const action = params.get('action');
   if (action) {
     document.csrfForm.action = action;
   }
-  const name = params.get(name);
+  const name = params.get('name');
   if (name) {
     document.input.name = name;
   }
-  const value = params.get(value);
+  const value = params.get('value');
   if (value) {
     document.input.value = value;
   }
